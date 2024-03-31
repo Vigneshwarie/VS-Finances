@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, LoanFragment.class);
                         intent.putExtra("selection", selection);
                         startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(MainActivity.this, CheckingAccountFragment.class);
+                        intent.putExtra("selection", selection);
+                        startActivity(intent);
                     }
                 }
             }

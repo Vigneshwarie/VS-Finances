@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".CDFragment" />
+        <activity android:name=".LoanFragment" />
     </application>
 
 </manifest>

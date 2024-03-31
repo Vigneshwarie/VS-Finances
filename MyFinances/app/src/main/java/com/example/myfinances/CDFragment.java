@@ -7,10 +7,17 @@ import android.widget.TextView;
 import android.widget.Button;
 
 public class CDFragment extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_cd);
+
+        Button buttonCancel = findViewById(R.id.cancelCDButton);
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 }

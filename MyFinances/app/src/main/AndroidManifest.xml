@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CDFragment" />
-        <activity android:name=".LoanFragment" />
-        <activity android:name=".CheckingAccountFragment" />
+        <activity android:name=".CDActivity" />
+        <activity android:name=".LoanActivity" />
+        <activity android:name=".CheckingAccountActivity" />
     </application>
 
 </manifest>

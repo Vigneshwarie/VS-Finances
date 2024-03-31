@@ -8,6 +8,16 @@
     android:layout_margin="20dp"
     >
 
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:text="Certificate of Deposit"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        />
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -125,6 +135,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"/>
+
+        <Button
+            android:id="@+id/cancelCDButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
             android:gravity="center"
             android:textStyle="bold"
             android:textSize="20sp"

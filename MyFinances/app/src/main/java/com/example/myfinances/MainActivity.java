@@ -28,12 +28,17 @@ public class MainActivity extends AppCompatActivity {
                 RadioButton radioButton = findViewById(selectedId);
 
                 if (radioButton != null) {
-                    System.out.println("Hello");
                     String selection = radioButton.getText().toString();
 
-                    Intent intent = new Intent(MainActivity.this, CDFragment.class);
-                    intent.putExtra("selection", selection);
-                    startActivity(intent);
+                    if(selection.equals("CD")){
+                        Intent intent = new Intent(MainActivity.this, CDFragment.class);
+                        intent.putExtra("selection", selection);
+                        startActivity(intent);
+                    } else if (selection.equals("Loans")) {
+                        Intent intent = new Intent(MainActivity.this, LoanFragment.class);
+                        intent.putExtra("selection", selection);
+                        startActivity(intent);
+                    }
                 }
             }
         });

@@ -2,15 +2,13 @@ package com.example.myfinances;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Button;
 
-public class CDFragment extends AppCompatActivity {
+public class CDActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_cd);
+        setContentView(R.layout.activity_cd);
 
         Button buttonCancel = findViewById(R.id.cancelCDButton);
         buttonCancel.setOnClickListener(new View.OnClickListener() {

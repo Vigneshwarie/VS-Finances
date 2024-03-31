@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".CDFragment" />
         <activity android:name=".LoanFragment" />
+        <activity android:name=".CheckingAccountFragment" />
     </application>
 
 </manifest>

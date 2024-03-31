@@ -1,6 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="20dp"
+    >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="100dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Account Number:"
+            android:gravity="center_vertical|right" />
+
+        <EditText
+            android:id="@+id/accountNumberEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Enter Account Number"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Initial Balance:"
+            android:gravity="center_vertical|right"
+            />
+
+        <EditText
+            android:id="@+id/initialBalanceEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Enter Initial Balance"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Current Balance:"
+            android:gravity="center_vertical|right"
+            />
+
+        <EditText
+            android:id="@+id/currentBalanceEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Enter Current Balance"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:text="Interest Rate:"
+            android:gravity="center_vertical|right"
+            />
+
+        <EditText
+            android:id="@+id/interestRateEditText"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:hint="Enter Interest Rate"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center">
+
+        <Button
+            android:id="@+id/submitCDButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+</LinearLayout>

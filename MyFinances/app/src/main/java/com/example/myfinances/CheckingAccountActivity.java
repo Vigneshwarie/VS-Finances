@@ -11,13 +11,15 @@ import com.example.myfinances.contentprovider.FinancesContentProvider;
 import android.widget.Toast;
 
 public class CheckingAccountActivity extends AppCompatActivity {
+    EditText chkAccountNumberEditText;
+    EditText chkCurrentBalanceEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checking_accounts);
 
-        EditText chkAccountNumberEditText = findViewById(R.id.chkAccountNumberEditText);
-        EditText chkCurrentBalanceEditText = findViewById(R.id.chkCurrentBalanceEditText);
+        chkAccountNumberEditText = findViewById(R.id.chkAccountNumberEditText);
+        chkCurrentBalanceEditText = findViewById(R.id.chkCurrentBalanceEditText);
         Button submitCheckingButton = findViewById(R.id.submitCheckingButton);
         submitCheckingButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -29,7 +31,8 @@ public class CheckingAccountActivity extends AppCompatActivity {
                 contentValues.put(FinancesContentProvider.CURRENT_BALANCE, current_balance);
                 Uri uri = getContentResolver().insert(FinancesContentProvider.CHECKING_CONTENT_URI, contentValues);
                 System.out.println(uri);
-                Toast.makeText(CheckingAccountActivity.this, "Checking Account Saved!", Toast.LENGTH_SHORT).show();
+                clearInputFormFields();
+                Toast.makeText(CheckingAccountActivity.this, "Checking Account data is saved in the system!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -40,5 +43,10 @@ public class CheckingAccountActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void clearInputFormFields() {
+        chkAccountNumberEditText.setText("");
+        chkCurrentBalanceEditText.setText("");
     }
 }

@@ -44,7 +44,7 @@ public class CDActivity extends AppCompatActivity {
                 Uri uri = getContentResolver().insert(FinancesContentProvider.CD_CONTENT_URI, contentValues);
                 System.out.println(uri);
                 clearInputFormFields();
-                Toast.makeText(CDActivity.this, "CD Saved!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CDActivity.this, "CD data is saved in the system!", Toast.LENGTH_SHORT).show();
             }
         });
 

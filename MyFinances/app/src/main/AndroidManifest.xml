@@ -25,6 +25,8 @@
         <activity android:name=".CDActivity" />
         <activity android:name=".LoanActivity" />
         <activity android:name=".CheckingAccountActivity" />
+        <provider android:name="com.example.myfinances.contentprovider.FinancesContentProvider" android:authorities="com.example.myfinances"/>
+
     </application>
 
 </manifest>

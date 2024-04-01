@@ -11,15 +11,20 @@ import android.widget.Toast;
 import com.example.myfinances.contentprovider.FinancesContentProvider;
 
 public class CDActivity extends AppCompatActivity {
+    EditText accountNumberEditText;
+    EditText initialBalanceEditText;
+    EditText currentBalanceEditText;
+    EditText interestRateEditText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cd);
 
-        EditText accountNumberEditText = findViewById(R.id.accountNumberEditText);
-        EditText initialBalanceEditText = findViewById(R.id.initialBalanceEditText);
-        EditText currentBalanceEditText = findViewById(R.id.currentBalanceEditText);
-        EditText interestRateEditText = findViewById(R.id.interestRateEditText);
+        accountNumberEditText = findViewById(R.id.accountNumberEditText);
+        initialBalanceEditText = findViewById(R.id.initialBalanceEditText);
+        currentBalanceEditText = findViewById(R.id.currentBalanceEditText);
+        interestRateEditText = findViewById(R.id.interestRateEditText);
         Button submitCDButton = findViewById(R.id.submitCDButton);
         submitCDButton.setOnClickListener(new View.OnClickListener(){
 
@@ -38,6 +43,7 @@ public class CDActivity extends AppCompatActivity {
                 contentValues.put(FinancesContentProvider.INTEREST_RATE, interest_rate);
                 Uri uri = getContentResolver().insert(FinancesContentProvider.CD_CONTENT_URI, contentValues);
                 System.out.println(uri);
+                clearInputFormFields();
                 Toast.makeText(CDActivity.this, "CD Saved!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -49,5 +55,11 @@ public class CDActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private void clearInputFormFields() {
+        accountNumberEditText.setText("");
+        initialBalanceEditText.setText("");
+        currentBalanceEditText.setText("");
+        interestRateEditText.setText("");
     }
 }

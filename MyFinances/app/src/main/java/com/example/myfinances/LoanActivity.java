@@ -12,18 +12,22 @@ import android.widget.Toast;
 import com.example.myfinances.contentprovider.FinancesContentProvider;
 
 public class LoanActivity extends AppCompatActivity {
+    EditText loanAccountNumberEditText;
+    EditText loanInitialBalanceEditText;
+    EditText loanCurrentBalanceEditText;
+    EditText loanPaymentAmtEditText;
+    EditText loanInterestRateEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_loans);
 
         //account number, initial balance, current balance, payment amount, and interest rate
-
-        EditText loanAccountNumberEditText = findViewById(R.id.loanAccountNumberEditText);
-        EditText loanInitialBalanceEditText = findViewById(R.id.loanInitialBalanceEditText);
-        EditText loanCurrentBalanceEditText = findViewById(R.id.loanCurrentBalanceEditText);
-        EditText loanPaymentAmtEditText = findViewById(R.id.loanPaymentAmtEditText);
-        EditText loanInterestRateEditText = findViewById(R.id.loanInterestRateEditText);
+        loanAccountNumberEditText = findViewById(R.id.loanAccountNumberEditText);
+        loanInitialBalanceEditText = findViewById(R.id.loanInitialBalanceEditText);
+        loanCurrentBalanceEditText = findViewById(R.id.loanCurrentBalanceEditText);
+        loanPaymentAmtEditText = findViewById(R.id.loanPaymentAmtEditText);
+        loanInterestRateEditText = findViewById(R.id.loanInterestRateEditText);
         Button submitLoanButton = findViewById(R.id.submitLoanButton);
         submitLoanButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -42,7 +46,8 @@ public class LoanActivity extends AppCompatActivity {
                 contentValues.put(FinancesContentProvider.INTEREST_RATE, interest_rate);
                 Uri uri = getContentResolver().insert(FinancesContentProvider.LOAN_CONTENT_URI, contentValues);
                 System.out.println(uri);
-                Toast.makeText(LoanActivity.this, "Loan Saved!", Toast.LENGTH_SHORT).show();
+                clearInputFormFields();
+                Toast.makeText(LoanActivity.this, "Loan data is saved in the system!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -54,5 +59,13 @@ public class LoanActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void clearInputFormFields() {
+        loanAccountNumberEditText.setText("");
+        loanInitialBalanceEditText.setText("");
+        loanCurrentBalanceEditText.setText("");
+        loanPaymentAmtEditText.setText("");
+        loanInterestRateEditText.setText("");
     }
 }
